@@ -1,91 +1,164 @@
-/* =============================================================
-   색상 테마는 "여기"에서 바꿉니다. (파랑 계열 기본)
-   원하는 색상 코드로 아래 4가지만 바꿔보세요.
-   ------------------------------------------------------------- */
+/* 베이지 이력서 테마. HTML 내용과 메뉴 링크는 그대로 사용합니다. */
 :root {
-  --primary: #1e5bb8;      /* 메인 포인트 색상 */
-  --primary-dark: #194c98; /* 호버/진한 포인트 */
-  --bg: #f7f9fc;           /* 전체 배경 색 */
-  --text: #222222;         /* 본문 글자 색 */
+  --primary: #9b6545;
+  --primary-dark: #754a33;
+  --bg: #f5f2ec;
+  --paper: #fcfaf6;
+  --panel: #e9dfd2;
+  --text: #594438;
+  --muted: #77665b;
+  --line: #ded3c5;
 }
-/* ============================================================= */
-
 * { box-sizing: border-box; }
+html { min-height: 100%; }
 body {
-  margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", Arial, sans-serif;
+  margin: 0 auto;
+  padding: 36px 32px 0;
+  max-width: 1180px;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 270px minmax(0, 1fr);
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: "nav nav" "profile content" "footer footer";
+  gap: 28px 36px;
+  font-family: "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
 }
-
-header {
-  padding: 2rem 1rem;
-  text-align: center;
-  background: var(--primary);
-  color: #ffffff;
-}
-header .subtitle { margin-top: .25rem; opacity: .95; }
-
+/* 네 메뉴의 이름, 순서, 이동 주소는 기존 HTML을 유지합니다. */
 nav {
-  background: var(--primary-dark);
+  grid-area: nav;
   display: flex;
-  gap: 1rem;
-  padding: .75rem 1rem;
   justify-content: center;
   flex-wrap: wrap;
+  gap: 12px 30px;
+  padding: 14px 12px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 nav a {
-  color: #ffffff;
+  color: var(--text);
   text-decoration: none;
-  font-weight: 600;
-  padding: .25rem .5rem;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-bottom: 2px solid transparent;
+  transition: color .18s, border-color .18s;
 }
-nav a:hover { text-decoration: underline; }
-
+nav a:hover { color: var(--primary); border-bottom-color: var(--primary); }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 4px;
+}
+header {
+  grid-area: profile;
+  position: relative;
+  min-height: 490px;
+  padding: 38px 26px;
+  background: var(--panel);
+  border-radius: 4px;
+  box-shadow: 0 3px 8px #5944380d;
+}
+header::after {
+  content: "";
+  display: block;
+  height: 150px;
+  margin-top: 72px;
+  border-radius: 3px;
+  background: var(--primary);
+  box-shadow: 0 3px 6px #5944381a;
+}
+header h1 { margin: 0 0 20px; font-size: 30px; line-height: 1.35; letter-spacing: -1.3px; }
+header .subtitle { margin: 0; font-size: 14px; color: var(--muted); }
 .container {
-  max-width: 900px;
-  margin: 1.5rem auto;
-  padding: 1rem;
-  background: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  grid-area: content;
+  min-width: 0;
+  padding: 28px 0 44px;
+  border-top: 2px solid var(--primary);
 }
-
-section { margin-bottom: 1rem; }
-h1, h2, h3 { margin: .2rem 0 .6rem; }
-
+section { margin: 0; }
+h2 { margin: 0 0 24px; font-size: 27px; line-height: 1.4; letter-spacing: -.6px; }
+h3 { margin: 32px 0 14px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 17px; }
+p { margin: 0 0 22px; }
+a { color: var(--primary-dark); text-underline-offset: 4px; }
+a:hover { color: var(--primary); }
+ul { padding-left: 21px; margin: 18px 0 26px; }
+ul li { padding: 8px 0; }
+li::marker { color: var(--primary); }
+strong { font-weight: 700; }
+ol { margin: 28px 0 0; padding: 0; list-style: none; counter-reset: project; }
+ol > li {
+  counter-increment: project;
+  position: relative;
+  padding: 24px 20px 26px 64px;
+  border-top: 1px solid var(--line);
+}
+ol > li:last-child { border-bottom: 1px solid var(--line); }
+ol > li::before {
+  content: counter(project, decimal-leading-zero);
+  position: absolute;
+  left: 8px;
+  top: 22px;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary);
+}
 .contact-form {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: .5rem;
-  margin-top: 1rem;
+  gap: 10px;
+  margin-top: 28px;
+  padding: 26px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  border-radius: 4px;
 }
+.contact-form label { font-size: 13px; font-weight: 700; }
 input, textarea {
   width: 100%;
-  padding: .6rem;
-  border: 1px solid #ddd;
-  border-radius: 6px;
+  min-width: 0;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: #fffdfa;
+  color: var(--text);
   font: inherit;
+  font-size: 14px;
 }
+textarea { resize: vertical; }
+input::placeholder, textarea::placeholder { color: var(--muted); }
 button {
-  padding: .6rem .8rem;
-  border: none;
-  border-radius: 6px;
+  justify-self: start;
+  padding: 12px 24px;
+  border: 0;
+  border-radius: 3px;
   background: var(--primary);
   color: #fff;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
   cursor: pointer;
-  font-weight: 600;
 }
 button:hover { background: var(--primary-dark); }
-
-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  color: #666;
+footer { grid-area: footer; text-align: center; padding: 20px 0 26px; border-top: 1px solid var(--line); color: var(--muted); }
+footer small { font-size: 12px; }
+@media (max-width: 760px) {
+  body {
+    padding: 20px 20px 0;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas: "nav" "profile" "content" "footer";
+    gap: 24px;
+  }
+  nav { gap: 4px 10px; padding: 10px 0; }
+  nav a { font-size: 13px; padding: 7px 6px; }
+  header { min-height: auto; padding: 28px 24px; border-left: 5px solid var(--primary); }
+  header h1 { font-size: 27px; margin-bottom: 12px; }
+  header::after { height: 5px; width: 64px; margin-top: 24px; box-shadow: none; }
+  .container { padding: 24px 0; }
+  h2 { font-size: 24px; }
+  .contact-form { padding: 20px; }
 }
-
-@media (max-width: 600px) {
-  header h1 { font-size: 1.25rem; }
-  .container { margin: 1rem; padding: .75rem; }
-}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
