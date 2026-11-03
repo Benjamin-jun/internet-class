@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Portfolio | 조형준 포트폴리오</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+<span class="brand">JHJ</span>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="portfolio.html">Portfolio</a>
+<a href="contact.html">Contact</a>
+</nav>
+<main class="container">
+<section class="reveal">
+<span class="tag">PROJECT</span>
+<h2><span class="no">01</span>금지구역 침입 감지</h2>
+<div class="project">
+<div>
+<h3>YOLOv3 + 노트북 웹캠 보안 알림</h3>
+<p>웹캠 화면에서 사람을 검출해 금지구역 침입이 K 프레임 연속될 때만 경고를 띄우는 시스템입니다.</p>
+<ul><li>OpenCV cv2.dnn으로 person만 검출, NMS 적용</li><li>박스 하단 중앙점을 기준점으로 선택</li><li>프레임·시각·K·경고 여부를 CSV로 저장</li><li>실제 처리 속도 약 1 FPS, 한계를 보고서에 명시</li></ul>
+<ul class="chips" style="margin-top:12px"><li>Python</li><li>OpenCV</li><li>YOLOv3</li></ul>
+</div>
+<div class="bars"><b>K별 경고 지연 (초)</b>
+<div class="bar"><span>K=3</span><i style="--w:22%"></i><b>1.98</b></div>
+<div class="bar"><span>K=5</span><i style="--w:44%"></i><b>3.92</b></div>
+<div class="bar"><span>K=10</span><i style="--w:100%"></i><b>8.86</b></div>
+<small style="color:#6b7390">K가 클수록 짧은 오검출은 거르지만 경고는 늦어집니다.</small></div>
+</div>
+</section>
+<section class="reveal">
+<h2><span class="no">02</span>공공자전거 대여량 MLP 회귀</h2>
+<div class="project">
+<div>
+<h3>8,760건 시간별 데이터 예측</h3>
+<p>기상·시간 정보로 시간당 대여량을 예측하고, 과적합 방지와 손실함수 비교까지 수행했습니다.</p>
+<ul><li>학습 데이터 기준 표준화, 원-핫 인코딩 (입력 22개)</li><li>Dropout + 조기 종료로 테스트 MAE 12.6% 감소</li><li>MSE · MAE · Huber 비교 후 MAE 선택</li><li>고수요 구간 과소예측 한계 확인</li></ul>
+<ul class="chips" style="margin-top:12px"><li>Python</li><li>NumPy</li><li>MLP</li></ul>
+</div>
+<div class="bars"><b>테스트 MAE (대/시간)</b>
+<div class="bar"><span>평균값</span><i style="--w:100%"></i><b>520.4</b></div>
+<div class="bar"><span>기본 MLP</span><i style="--w:22%"></i><b>115.5</b></div>
+<div class="bar"><span>최종</span><i style="--w:18%"></i><b>94.9</b></div>
+<small style="color:#6b7390">최종 모델 R² 0.937 (테스트 1,752건)</small></div>
+</div>
+</section>
+<section class="reveal">
+<h2><span class="no">03</span>개인 포트폴리오 사이트</h2>
+<div class="dark"><h3>HTML · CSS · JavaScript</h3><p>인터넷활용 수업에서 만든 정적 사이트입니다. GitHub로 관리하며 이 사이트를 계속 확장하고 있습니다.</p></div>
+</section>
+</main>
+<footer><small>&copy; <span id="year"></span> 조형준 · Kwangwoon Univ. Information Convergence</small></footer>
+<script src="script.js"></script>
+</body></html>
