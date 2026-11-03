@@ -3,33 +3,34 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Contact | 조형준 포트폴리오</title>
+<title>Contact | 조형준</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<nav>
-<span class="brand">JHJ</span>
+<nav><div class="wrap">
+<a class="brand" href="index.html"><b>HJ</b>조형준</a>
+<div class="links">
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
 <a href="portfolio.html">Portfolio</a>
 <a href="contact.html">Contact</a>
-</nav>
-<main class="container">
-<section class="reveal">
-<span class="tag">CONTACT</span>
-<h2>Contact</h2>
-<div class="grid">
-<a class="card" href="mailto:qkqh0430@gmail.com"><span class="n">Email</span>qkqh0430@gmail.com</a>
-<a class="card" href="https://github.com/Benjamin-jun" target="_blank" rel="noopener"><span class="n">GitHub</span>Benjamin-jun</a>
-<div class="card"><span class="n">Blog / Notion</span>준비 중</div>
 </div>
-<form class="contact-form">
-<label>이름</label><input type="text" placeholder="이름을 입력하세요" required>
-<label>메시지</label><textarea rows="4" placeholder="메시지를 입력하세요" required></textarea>
-<button type="submit">메일 앱으로 보내기</button>
-</form>
-</section>
-</main>
-<footer><small>&copy; <span id="year"></span> 조형준 · Kwangwoon Univ. Information Convergence</small></footer>
+<span class="tagr">INFORMATION CONVERGENCE</span>
+</div></nav>
+<main class="wrap">
+<div class="pagehead"><div><span class="eyebrow dot">Let's connect</span><h1>Contact</h1><p>프로젝트에 관한 질문이나 함께 공부하고 만들 아이디어가 있다면 편하게 연락해 주세요.</p></div><div class="ghost">04</div></div>
+<section class="contact">
+<div><h2>새로운 질문이<br><span style="color:var(--ac)">다음 프로젝트의 시작입니다.</span></h2><p style="color:var(--mute);margin-bottom:26px">데이터 분석, 딥러닝, 컴퓨터 비전에 관심이 있습니다.<br>배운 것을 나누고 함께 시도할 기회를 기다립니다.</p>
+<div class="info"><div><span><small>EMAIL</small><b>qkqh0430@gmail.com</b></span><button id="copy" type="button">복사</button></div>
+<div><span><small>GITHUB</small><b>github.com/Benjamin-jun</b></span><a href="https://github.com/Benjamin-jun" target="_blank" rel="noopener">↗</a></div>
+<div><span><small>UNIVERSITY</small><b>광운대학교 정보융합학과</b></span></div></div></div>
+<form id="mail"><h3>어떤 이야기를 나눌까요?</h3><small>작성한 내용으로 기본 메일 앱의 초안을 엽니다. 메일 앱에서 확인한 뒤 직접 전송할 수 있습니다.</small>
+<label>이름</label><input required placeholder="이름을 알려주세요">
+<label>답장 받을 이메일 (선택)</label><input type="email" placeholder="hello@example.com">
+<label>메시지</label><textarea rows="5" required placeholder="궁금한 점이나 함께하고 싶은 프로젝트를 적어 주세요."></textarea>
+<button type="submit">메일 초안 열기 ↗</button></form>
+</section></main>
+<footer><div class="wrap"><span>&copy; <span id="year"></span> HyeongJun Cho. Built with curiosity.</span><span><a href="https://github.com/Benjamin-jun" target="_blank" rel="noopener">GitHub ↗</a><a href="mailto:qkqh0430@gmail.com">Email ↗</a></span></div></footer>
 <script src="script.js"></script>
-</body></html>
+</body>
+</html>

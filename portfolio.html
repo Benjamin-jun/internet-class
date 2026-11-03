@@ -3,56 +3,43 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Portfolio | 조형준 포트폴리오</title>
+<title>Portfolio | 조형준</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<nav>
-<span class="brand">JHJ</span>
+<nav><div class="wrap">
+<a class="brand" href="index.html"><b>HJ</b>조형준</a>
+<div class="links">
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
 <a href="portfolio.html">Portfolio</a>
 <a href="contact.html">Contact</a>
-</nav>
-<main class="container">
-<section class="reveal">
-<span class="tag">PROJECT</span>
-<h2><span class="no">01</span>금지구역 침입 감지</h2>
-<div class="project">
-<div>
-<h3>YOLOv3 + 노트북 웹캠 보안 알림</h3>
-<p>웹캠 화면에서 사람을 검출해 금지구역 침입이 K 프레임 연속될 때만 경고를 띄우는 시스템입니다.</p>
-<ul><li>OpenCV cv2.dnn으로 person만 검출, NMS 적용</li><li>박스 하단 중앙점을 기준점으로 선택</li><li>프레임·시각·K·경고 여부를 CSV로 저장</li><li>실제 처리 속도 약 1 FPS, 한계를 보고서에 명시</li></ul>
-<ul class="chips" style="margin-top:12px"><li>Python</li><li>OpenCV</li><li>YOLOv3</li></ul>
 </div>
-<div class="bars"><b>K별 경고 지연 (초)</b>
-<div class="bar"><span>K=3</span><i style="--w:22%"></i><b>1.98</b></div>
-<div class="bar"><span>K=5</span><i style="--w:44%"></i><b>3.92</b></div>
-<div class="bar"><span>K=10</span><i style="--w:100%"></i><b>8.86</b></div>
-<small style="color:#6b7390">K가 클수록 짧은 오검출은 거르지만 경고는 늦어집니다.</small></div>
-</div>
-</section>
-<section class="reveal">
-<h2><span class="no">02</span>공공자전거 대여량 MLP 회귀</h2>
-<div class="project">
-<div>
-<h3>8,760건 시간별 데이터 예측</h3>
-<p>기상·시간 정보로 시간당 대여량을 예측하고, 과적합 방지와 손실함수 비교까지 수행했습니다.</p>
-<ul><li>학습 데이터 기준 표준화, 원-핫 인코딩 (입력 22개)</li><li>Dropout + 조기 종료로 테스트 MAE 12.6% 감소</li><li>MSE · MAE · Huber 비교 후 MAE 선택</li><li>고수요 구간 과소예측 한계 확인</li></ul>
-<ul class="chips" style="margin-top:12px"><li>Python</li><li>NumPy</li><li>MLP</li></ul>
-</div>
-<div class="bars"><b>테스트 MAE (대/시간)</b>
-<div class="bar"><span>평균값</span><i style="--w:100%"></i><b>520.4</b></div>
-<div class="bar"><span>기본 MLP</span><i style="--w:22%"></i><b>115.5</b></div>
-<div class="bar"><span>최종</span><i style="--w:18%"></i><b>94.9</b></div>
-<small style="color:#6b7390">최종 모델 R² 0.937 (테스트 1,752건)</small></div>
-</div>
-</section>
-<section class="reveal">
-<h2><span class="no">03</span>개인 포트폴리오 사이트</h2>
-<div class="dark"><h3>HTML · CSS · JavaScript</h3><p>인터넷활용 수업에서 만든 정적 사이트입니다. GitHub로 관리하며 이 사이트를 계속 확장하고 있습니다.</p></div>
-</section>
+<span class="tagr">INFORMATION CONVERGENCE</span>
+</div></nav>
+<main class="wrap">
+<div class="pagehead"><div><span class="eyebrow dot">Experiments &amp; Projects</span><h1>Selected projects</h1><p>예측에서 인식, 그리고 실제 동작까지.<br>네 가지 프로젝트에서 시도한 방법과 배운 점을 정리했습니다.</p></div><div class="ghost">03</div></div>
+<div class="filters"><button class="on" data-f="all">전체</button><button data-f="data">데이터 분석</button><button data-f="vision">컴퓨터 비전</button><span id="count" style="margin-left:auto;font-size:.8rem;color:var(--mute);align-self:center">4 projects</span></div>
+<div class="cards" style="padding-bottom:30px"><article class="card reveal" data-cat="data">
+<div class="thumb"><span class="lab">PUBLIC BIKE · MLP REGRESSION</span><div><div class="big">94.9</div><small>테스트 MAE · 대/시간</small><br><small>8,760 observations · 22 input features</small></div><div style="display:flex;gap:18px;align-items:flex-end;margin-left:auto"><div class="col" style="height:110px"><em>115.5</em></div><div class="col" style="height:130px;background:#8a88e8"><em>100.9</em></div><div class="col" style="height:138px;background:var(--ac)"><em>94.9</em></div></div></div>
+<div class="meta"><span>DATA ANALYSIS</span><span>PROJECT 01</span></div>
+<h3>공공자전거 대여량 예측<span>↗</span></h3><p>시간·계절·기상 데이터를 MLP에 입력해 대여량을 예측하고, 과적합 방지와 손실함수에 따른 차이를 비교했습니다.</p><div class="chips"><span>Python</span><span>NumPy</span><span>MLP</span></div><div class="note">기본 MLP 115.5 → Dropout·조기 종료 100.9 → MAE 손실 94.9 (테스트 MAE)</div><details><summary>실험 내용과 배운 점</summary><ul><li>학습 데이터 기준 표준화, 원-핫 인코딩</li><li>MSE · MAE · Huber 비교 후 MAE 손실 선택</li><li>고수요 구간에서 과소예측 경향 확인</li></ul></details>
+</article><article class="card reveal" data-cat="data">
+<div class="thumb"><span class="lab">INFO IMAGES · CNN CLASSIFICATION</span><div style="width:100%;font-size:.85rem">소수 클래스 재현율 비교<br>Dropout 43.2%<div class="hbar" style="width:43%"></div>+ class_weight 70.1%<div class="hbar" style="width:70%;background:var(--ac)"></div><small>23,129 images</small></div></div>
+<div class="meta"><span>DEEP LEARNING</span><span>PROJECT 02</span></div>
+<h3>CNN 분류와 데이터 불균형 분석<span>↗</span></h3><p>Info_Images 데이터로 CNN 분류 실험을 진행하고, 정확도와 함께 재현율·정밀도를 살펴 데이터 불균형의 영향을 분석했습니다.</p><div class="chips"><span>TensorFlow</span><span>Keras</span><span>CNN</span></div><div class="note">재현율을 향상시키고 오탐 증가를 함께 분석했습니다.</div>
+</article><article class="card reveal" data-cat="vision">
+<div class="thumb"><span class="lab">YOLOv3 · INTRUSION DETECTION</span><div><div class="big" style="font-size:1.8rem">Observe. Detect.<br><span style="color:var(--ink)">Then, act.</span></div><small>연속 침입 조건으로 경고 시점 제어</small><br><b>K=3 1.98s · K=5 3.92s · K=10 8.86s</b></div></div>
+<div class="meta"><span>COMPUTER VISION</span><span>PROJECT 03</span></div>
+<h3>YOLOv3 금지구역 침입 감지<span>↗</span></h3><p>웹캠에서 사람을 검출하고, 지정한 영역에 연속으로 진입하면 경고하는 프로그램을 구현했습니다. 탐지 결과는 CSV와 영상으로 기록했습니다.</p><div class="chips"><span>Python</span><span>OpenCV</span><span>YOLOv3</span></div><div class="note">연속 조건 <b>K = 3 · 5 · 10</b>의 경고 지연 비교</div><details><summary>실험 내용과 배운 점</summary><ul><li>실제 추론 속도 약 1 FPS, 경고 반응 속도의 한계 확인</li><li>K가 클수록 짧은 오검출을 거르지만 경고는 늦어짐</li><li>촬영 1회로 현장 성능을 일반화할 수 없음</li></ul></details>
+</article><article class="card reveal" data-cat="vision">
+<div class="thumb dark"><span class="lab">VISION TO ACTION · YAW + PITCH</span><div style="margin-left:auto;border:1px solid #5b57a8;border-radius:12px;padding:20px 26px"><small>CNN REGRESSION</small><div style="font-size:1.8rem;font-weight:800">2 outputs</div><small>Yaw + Pitch</small></div></div>
+<div class="meta"><span>VISION & CONTROL</span><span>PROJECT 04</span></div>
+<h3>고무줄총 표적 인식과 각도 예측<span>↗</span></h3><p>YOLO의 표적 인식과 CNN 회귀를 연결했습니다. Yaw 단일 출력에서 Yaw·Pitch 두 축 예측으로 확장하며 실제 장치의 오차를 분석했습니다.</p><div class="chips"><span>PyTorch</span><span>YOLO</span><span>CNN</span></div><div class="note">CNN 출력 <b>1축 → 2축</b> · Yaw + Pitch</div><details><summary>실험 내용과 배운 점</summary><ul><li>최종 장치 명중률 50%는 실험자 보고값이며 총 시도 수는 기록되지 않음</li></ul></details>
+</article></div>
+<p style="font-size:.8rem;color:var(--mute);padding-bottom:50px">각 수치는 해당 실습 조건에서 얻은 결과입니다. 자세한 조건과 한계는 프로젝트별 '실험 내용과 배운 점'에서 확인할 수 있습니다.</p>
 </main>
-<footer><small>&copy; <span id="year"></span> 조형준 · Kwangwoon Univ. Information Convergence</small></footer>
+<footer><div class="wrap"><span>&copy; <span id="year"></span> HyeongJun Cho. Built with curiosity.</span><span><a href="https://github.com/Benjamin-jun" target="_blank" rel="noopener">GitHub ↗</a><a href="mailto:qkqh0430@gmail.com">Email ↗</a></span></div></footer>
 <script src="script.js"></script>
-</body></html>
+</body>
+</html>

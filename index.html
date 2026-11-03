@@ -3,43 +3,52 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Home | 조형준 포트폴리오</title>
+<title>Home | 조형준</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<nav>
-<span class="brand">JHJ</span>
+<nav><div class="wrap">
+<a class="brand" href="index.html"><b>HJ</b>조형준</a>
+<div class="links">
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
 <a href="portfolio.html">Portfolio</a>
 <a href="contact.html">Contact</a>
-</nav>
-<header>
-<span class="tag">PORTFOLIO</span>
-<h1>데이터를 모델로 만들고,<br><em>한계까지 기록</em>하는 개발자</h1>
-<p class="subtitle">광운대 정보융합학과 조형준입니다. 문제를 데이터로 정의하고, 모델로 검증하고, 결과의 한계까지 함께 보고합니다.</p>
-<div class="cta"><a class="btn" href="portfolio.html">프로젝트 보기</a><a class="btn ghost" href="contact.html">연락하기</a></div>
-</header>
-<main class="container">
-<section class="reveal">
-<span class="tag">PROFILE</span>
-<h2>안녕하세요, 조형준입니다</h2>
-<div class="grid">
-<div class="card"><span class="n">01</span><h3>학과/학번</h3><p>정보융합학과 / 2021204041</p></div>
-<div class="card"><span class="n">02</span><h3>관심 분야</h3><p>데이터 분석, 딥러닝, 컴퓨터 비전</p></div>
-<div class="card"><span class="n">03</span><h3>기술 스택</h3><p>Python · NumPy · OpenCV · HTML/CSS/JS · Git</p></div>
 </div>
+<span class="tagr">INFORMATION CONVERGENCE</span>
+</div></nav>
+<main class="wrap">
+<section class="hero">
+<div><span class="eyebrow dot">Data · Deep Learning · Computer Vision</span>
+<h1>데이터를 읽고,<br>모델을 만들고,<br><em>실제 문제에 연결합니다.</em></h1>
+<p>안녕하세요, <b>광운대학교 정보융합학과 조형준</b>입니다.<br>데이터 분석부터 영상 인식과 장치 제어까지,<br>직접 실험하고 결과를 해석하며 배우고 있습니다.</p>
+<div class="btns"><a class="btn fill" href="portfolio.html">프로젝트 살펴보기 ↗</a><a class="btn" href="about.html">저를 소개합니다 →</a></div></div>
+<div class="art"><div class="disc"><small>LEARN. BUILD. CONNECT.</small><span>DATA</span><i>to</i><span>IMPACT.</span></div>
+<div class="float f1"><small>01 / EXPLORE</small><b>8,760</b><small>공공자전거 시간별 관측값</small></div>
+<div class="float f2"><small>02 / BUILD</small><b>MLP · CNN</b><small>데이터에서 예측 모델로</small></div></div>
 </section>
-<section class="reveal">
-<span class="tag">HIGHLIGHT</span>
-<h2>숫자로 보는 프로젝트</h2>
-<div class="stats">
-<div class="stat"><b>94.9대</b><span>자전거 대여량 예측 테스트 MAE</span></div>
-<div class="stat"><b>R² 0.937</b><span>MLP 회귀 최종 모델</span></div>
-<div class="stat"><b>3종</b><span>K=3·5·10 경고 지연 비교</span></div>
-</div>
-</section>
+<div class="strip"><div><b style="font-size:.95rem">질문에서 출발해, 구현으로.</b><small>수업과 실험으로 쌓아가는 프로젝트</small></div><div><b>04</b><small>프로젝트 이야기</small></div><div><b>MLP · CNN</b><small>예측과 분류</small></div><div><b>YOLO · CV</b><small>영상 인식과 제어</small></div></div>
+<section class="sec"><div class="eyebrow">Selected Work</div><h2>실험하며 쌓아온 경험</h2>
+<div class="cards"><article class="card reveal" data-cat="data">
+<div class="thumb"><span class="lab">PUBLIC BIKE · MLP REGRESSION</span><div><div class="big">94.9</div><small>테스트 MAE · 대/시간</small><br><small>8,760 observations · 22 input features</small></div><div style="display:flex;gap:18px;align-items:flex-end;margin-left:auto"><div class="col" style="height:110px"><em>115.5</em></div><div class="col" style="height:130px;background:#8a88e8"><em>100.9</em></div><div class="col" style="height:138px;background:var(--ac)"><em>94.9</em></div></div></div>
+<div class="meta"><span>DATA ANALYSIS</span><span>PROJECT 01</span></div>
+<h3>공공자전거 대여량 예측<span>↗</span></h3><p>시간·계절·기상 데이터를 MLP에 입력해 대여량을 예측하고, 과적합 방지와 손실함수에 따른 차이를 비교했습니다.</p><div class="chips"><span>Python</span><span>NumPy</span><span>MLP</span></div><div class="note">기본 MLP 115.5 → Dropout·조기 종료 100.9 → MAE 손실 94.9 (테스트 MAE)</div><details><summary>실험 내용과 배운 점</summary><ul><li>학습 데이터 기준 표준화, 원-핫 인코딩</li><li>MSE · MAE · Huber 비교 후 MAE 손실 선택</li><li>고수요 구간에서 과소예측 경향 확인</li></ul></details>
+</article><article class="card reveal" data-cat="data">
+<div class="thumb"><span class="lab">INFO IMAGES · CNN CLASSIFICATION</span><div style="width:100%;font-size:.85rem">소수 클래스 재현율 비교<br>Dropout 43.2%<div class="hbar" style="width:43%"></div>+ class_weight 70.1%<div class="hbar" style="width:70%;background:var(--ac)"></div><small>23,129 images</small></div></div>
+<div class="meta"><span>DEEP LEARNING</span><span>PROJECT 02</span></div>
+<h3>CNN 분류와 데이터 불균형 분석<span>↗</span></h3><p>Info_Images 데이터로 CNN 분류 실험을 진행하고, 정확도와 함께 재현율·정밀도를 살펴 데이터 불균형의 영향을 분석했습니다.</p><div class="chips"><span>TensorFlow</span><span>Keras</span><span>CNN</span></div><div class="note">재현율을 향상시키고 오탐 증가를 함께 분석했습니다.</div>
+</article><article class="card reveal" data-cat="vision">
+<div class="thumb"><span class="lab">YOLOv3 · INTRUSION DETECTION</span><div><div class="big" style="font-size:1.8rem">Observe. Detect.<br><span style="color:var(--ink)">Then, act.</span></div><small>연속 침입 조건으로 경고 시점 제어</small><br><b>K=3 1.98s · K=5 3.92s · K=10 8.86s</b></div></div>
+<div class="meta"><span>COMPUTER VISION</span><span>PROJECT 03</span></div>
+<h3>YOLOv3 금지구역 침입 감지<span>↗</span></h3><p>웹캠에서 사람을 검출하고, 지정한 영역에 연속으로 진입하면 경고하는 프로그램을 구현했습니다. 탐지 결과는 CSV와 영상으로 기록했습니다.</p><div class="chips"><span>Python</span><span>OpenCV</span><span>YOLOv3</span></div><div class="note">연속 조건 <b>K = 3 · 5 · 10</b>의 경고 지연 비교</div><details><summary>실험 내용과 배운 점</summary><ul><li>실제 추론 속도 약 1 FPS, 경고 반응 속도의 한계 확인</li><li>K가 클수록 짧은 오검출을 거르지만 경고는 늦어짐</li><li>촬영 1회로 현장 성능을 일반화할 수 없음</li></ul></details>
+</article><article class="card reveal" data-cat="vision">
+<div class="thumb dark"><span class="lab">VISION TO ACTION · YAW + PITCH</span><div style="margin-left:auto;border:1px solid #5b57a8;border-radius:12px;padding:20px 26px"><small>CNN REGRESSION</small><div style="font-size:1.8rem;font-weight:800">2 outputs</div><small>Yaw + Pitch</small></div></div>
+<div class="meta"><span>VISION & CONTROL</span><span>PROJECT 04</span></div>
+<h3>고무줄총 표적 인식과 각도 예측<span>↗</span></h3><p>YOLO의 표적 인식과 CNN 회귀를 연결했습니다. Yaw 단일 출력에서 Yaw·Pitch 두 축 예측으로 확장하며 실제 장치의 오차를 분석했습니다.</p><div class="chips"><span>PyTorch</span><span>YOLO</span><span>CNN</span></div><div class="note">CNN 출력 <b>1축 → 2축</b> · Yaw + Pitch</div><details><summary>실험 내용과 배운 점</summary><ul><li>최종 장치 명중률 50%는 실험자 보고값이며 총 시도 수는 기록되지 않음</li></ul></details>
+</article></div></section>
+<div class="cta"><div><h3>함께 배우고, 만들어가고 싶습니다.</h3><p>데이터 분석과 AI 프로젝트에 관한 이야기를 기다립니다.</p></div><a class="btn fill" href="contact.html">연락하기 ↗</a></div>
 </main>
-<footer><small>&copy; <span id="year"></span> 조형준 · Kwangwoon Univ. Information Convergence</small></footer>
+<footer><div class="wrap"><span>&copy; <span id="year"></span> HyeongJun Cho. Built with curiosity.</span><span><a href="https://github.com/Benjamin-jun" target="_blank" rel="noopener">GitHub ↗</a><a href="mailto:qkqh0430@gmail.com">Email ↗</a></span></div></footer>
 <script src="script.js"></script>
-</body></html>
+</body>
+</html>
