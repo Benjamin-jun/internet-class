@@ -18,72 +18,43 @@
 <span class="tagr">INFORMATION CONVERGENCE</span>
 </div></nav>
 <main class="wrap">
-<div class="pagehead"><div><span class="eyebrow dot">Experiments &amp; Projects</span><h1>Selected projects</h1><p>예측에서 인식, 그리고 실제 동작과 웹 구현까지.<br>여섯 가지 프로젝트에서 시도한 방법과 배운 점을 정리했습니다.</p></div><div class="ghost">03</div></div>
-<div class="filters">
-  <button class="on" data-f="all">전체</button>
-  <button data-f="data">데이터 분석</button>
-  <button data-f="vision">컴퓨터 비전</button>
-  <button data-f="web">웹 실습</button>
-  <span id="count" style="margin-left:auto;font-size:.8rem;color:var(--mute);align-self:center">6 projects</span>
-</div>
-<div class="cards" style="padding-bottom:30px">
+<div class="pagehead"><div><span class="eyebrow dot">Experiments &amp; Projects</span><h1>Selected projects</h1><p>예측에서 인식, 그리고 실제 동작까지.<br>네 가지 프로젝트에서 시도한 방법과 배운 점을 정리했습니다.</p></div><div class="ghost">03</div></div>
 
-<article class="card reveal" data-cat="data">
+<!-- 웹 실습 바로가기 섹션 (페이지 진입 시 바로 보임) -->
+<section style="margin-bottom:36px;padding:20px 24px;border:1px solid rgba(138,136,232,0.28);border-radius:14px;background:rgba(138,136,232,0.04)">
+  <div style="font-size:.75rem;font-weight:700;letter-spacing:.08em;color:var(--ac);margin-bottom:12px">WEB PRACTICE · 바로 실행하기</div>
+  <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:14px">
+    <li style="padding:14px 16px;border-radius:10px;border:1px solid rgba(128,128,128,0.18);background:var(--bg, #fff)">
+      <strong>실습 1: D-Day 계산기</strong><br>
+      <span style="font-size:.88rem;color:var(--mute)">설명: Date 객체를 활용하여 D-Day를 계산합니다.</span><br>
+      <a href="dday.html" style="display:inline-block;margin-top:8px;font-size:.88rem;font-weight:600;color:var(--ac);text-decoration:none">페이지 바로가기 ↗</a>
+    </li>
+    <li style="padding:14px 16px;border-radius:10px;border:1px solid rgba(128,128,128,0.18);background:var(--bg, #fff)">
+      <strong>실습 2: 랜덤 뽑기</strong><br>
+      <span style="font-size:.88rem;color:var(--mute)">설명: String, Array, Math 객체를 조합한 랜덤 뽑기입니다.</span><br>
+      <a href="random.html" style="display:inline-block;margin-top:8px;font-size:.88rem;font-weight:600;color:var(--ac);text-decoration:none">페이지 바로가기 ↗</a>
+    </li>
+  </ul>
+</section>
+
+<div class="filters"><button class="on" data-f="all">전체</button><button data-f="data">데이터 분석</button><button data-f="vision">컴퓨터 비전</button><span id="count" style="margin-left:auto;font-size:.8rem;color:var(--mute);align-self:center">4 projects</span></div>
+<div class="cards" style="padding-bottom:30px"><article class="card reveal" data-cat="data">
 <div class="thumb"><span class="lab">PUBLIC BIKE · MLP REGRESSION</span><div><div class="big">94.9</div><small>테스트 MAE · 대/시간</small><br><small>8,760 observations · 22 input features</small></div><div style="display:flex;gap:18px;align-items:flex-end;margin-left:auto"><div class="col" style="height:110px"><em>115.5</em></div><div class="col" style="height:130px;background:#8a88e8"><em>100.9</em></div><div class="col" style="height:138px;background:var(--ac)"><em>94.9</em></div></div></div>
 <div class="meta"><span>DATA ANALYSIS</span><span>PROJECT 01</span></div>
 <h3>공공자전거 대여량 예측<span>↗</span></h3><p>시간·계절·기상 데이터를 MLP에 입력해 대여량을 예측하고, 과적합 방지와 손실함수에 따른 차이를 비교했습니다.</p><div class="chips"><span>Python</span><span>NumPy</span><span>MLP</span></div><div class="note">기본 MLP 115.5 → Dropout·조기 종료 100.9 → MAE 손실 94.9 (테스트 MAE)</div><details><summary>실험 내용과 배운 점</summary><ul><li>학습 데이터 기준 표준화, 원-핫 인코딩</li><li>MSE · MAE · Huber 비교 후 MAE 손실 선택</li><li>고수요 구간에서 과소예측 경향 확인</li></ul></details>
-</article>
-
-<article class="card reveal" data-cat="data">
+</article><article class="card reveal" data-cat="data">
 <div class="thumb"><span class="lab">INFO IMAGES · CNN CLASSIFICATION</span><div style="width:100%;font-size:.85rem">소수 클래스 재현율 비교<br>Dropout 43.2%<div class="hbar" style="width:43%"></div>+ class_weight 70.1%<div class="hbar" style="width:70%;background:var(--ac)"></div><small>23,129 images</small></div></div>
 <div class="meta"><span>DEEP LEARNING</span><span>PROJECT 02</span></div>
 <h3>CNN 분류와 데이터 불균형 분석<span>↗</span></h3><p>Info_Images 데이터로 CNN 분류 실험을 진행하고, 정확도와 함께 재현율·정밀도를 살펴 데이터 불균형의 영향을 분석했습니다.</p><div class="chips"><span>TensorFlow</span><span>Keras</span><span>CNN</span></div><div class="note">재현율을 향상시키고 오탐 증가를 함께 분석했습니다.</div>
-</article>
-
-<article class="card reveal" data-cat="vision">
+</article><article class="card reveal" data-cat="vision">
 <div class="thumb"><span class="lab">YOLOv3 · INTRUSION DETECTION</span><div><div class="big" style="font-size:1.8rem">Observe. Detect.<br><span style="color:var(--ink)">Then, act.</span></div><small>연속 침입 조건으로 경고 시점 제어</small><br><b>K=3 1.98s · K=5 3.92s · K=10 8.86s</b></div></div>
 <div class="meta"><span>COMPUTER VISION</span><span>PROJECT 03</span></div>
 <h3>YOLOv3 금지구역 침입 감지<span>↗</span></h3><p>웹캠에서 사람을 검출하고, 지정한 영역에 연속으로 진입하면 경고하는 프로그램을 구현했습니다. 탐지 결과는 CSV와 영상으로 기록했습니다.</p><div class="chips"><span>Python</span><span>OpenCV</span><span>YOLOv3</span></div><div class="note">연속 조건 <b>K = 3 · 5 · 10</b>의 경고 지연 비교</div><details><summary>실험 내용과 배운 점</summary><ul><li>실제 추론 속도 약 1 FPS, 경고 반응 속도의 한계 확인</li><li>K가 클수록 짧은 오검출을 거르지만 경고는 늦어짐</li><li>촬영 1회로 현장 성능을 일반화할 수 없음</li></ul></details>
-</article>
-
-<article class="card reveal" data-cat="vision">
+</article><article class="card reveal" data-cat="vision">
 <div class="thumb dark"><span class="lab">VISION TO ACTION · YAW + PITCH</span><div style="margin-left:auto;border:1px solid #5b57a8;border-radius:12px;padding:20px 26px"><small>CNN REGRESSION</small><div style="font-size:1.8rem;font-weight:800">2 outputs</div><small>Yaw + Pitch</small></div></div>
-<div class="meta"><span>VISION &amp; CONTROL</span><span>PROJECT 04</span></div>
+<div class="meta"><span>VISION & CONTROL</span><span>PROJECT 04</span></div>
 <h3>고무줄총 표적 인식과 각도 예측<span>↗</span></h3><p>YOLO의 표적 인식과 CNN 회귀를 연결했습니다. Yaw 단일 출력에서 Yaw·Pitch 두 축 예측으로 확장하며 실제 장치의 오차를 분석했습니다.</p><div class="chips"><span>PyTorch</span><span>YOLO</span><span>CNN</span></div><div class="note">CNN 출력 <b>1축 → 2축</b> · Yaw + Pitch</div><details><summary>실험 내용과 배운 점</summary><ul><li>최종 장치 명중률 50%는 실험자 보고값이며 총 시도 수는 기록되지 않음</li></ul></details>
-</article>
-
-<article class="card reveal" data-cat="web">
-<div class="thumb">
-  <span class="lab">JAVASCRIPT · DATE OBJECT</span>
-  <div>
-    <div class="big">D-Day</div>
-    <small>목표 날짜까지 남은 일수 계산</small><br>
-    <small>Date 객체 · 밀리초(ms) 단위 환산</small>
-  </div>
-</div>
-<div class="meta"><span>WEB PRACTICE 01</span><span>PROJECT 05</span></div>
-<h3><a href="dday.html" style="text-decoration:none;color:inherit">D-Day 계산기<span>↗</span></a></h3>
-<p>JavaScript의 내장 Date 객체를 활용하여 기준일과 목표 날짜 간의 시간 차이를 계산하고 D-Day를 출력하는 웹 실습입니다.</p>
-<div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Date</span></div>
-<div class="note"><a href="dday.html" style="color:var(--ac);font-weight:600;text-decoration:none">페이지 바로가기 →</a></div>
-</article>
-
-<article class="card reveal" data-cat="web">
-<div class="thumb dark">
-  <span class="lab">JAVASCRIPT · ARRAY &amp; MATH</span>
-  <div>
-    <div class="big" style="font-size:1.8rem">Random<br><span style="color:#a5a3ff">Picker.</span></div>
-    <small>문자열 파싱 및 난수 인덱스 추출</small>
-  </div>
-</div>
-<div class="meta"><span>WEB PRACTICE 02</span><span>PROJECT 06</span></div>
-<h3><a href="random.html" style="text-decoration:none;color:inherit">랜덤 뽑기<span>↗</span></a></h3>
-<p>String, Array, Math 객체를 조합하여 입력된 항목을 분리하고 무작위로 추첨 결과를 반환하는 인터랙티브 웹 실습입니다.</p>
-<div class="chips"><span>HTML</span><span>JavaScript</span><span>String</span><span>Array</span><span>Math</span></div>
-<div class="note"><a href="random.html" style="color:var(--ac);font-weight:600;text-decoration:none">페이지 바로가기 →</a></div>
-</article>
-
-</div>
+</article></div>
 <p style="font-size:.8rem;color:var(--mute);padding-bottom:50px">각 수치는 해당 실습 조건에서 얻은 결과입니다. 자세한 조건과 한계는 프로젝트별 '실험 내용과 배운 점'에서 확인할 수 있습니다.</p>
 </main>
 <footer><div class="wrap"><span>&copy; <span id="year"></span> HyeongJun Cho. Built with curiosity.</span><span><a href="https://github.com/Benjamin-jun" target="_blank" rel="noopener">GitHub ↗</a><a href="mailto:qkqh0430@gmail.com">Email ↗</a></span></div></footer>
